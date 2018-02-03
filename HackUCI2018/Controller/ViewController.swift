@@ -13,7 +13,7 @@ import ARKit
 class ViewController: UIViewController, ARSCNViewDelegate {
 
     @IBOutlet var sceneView: ARSCNView!
-    
+    var image : UIImage = UIImage()
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -52,16 +52,21 @@ class ViewController: UIViewController, ARSCNViewDelegate {
         // Release any cached data, images, etc that aren't in use.
     }
 
-    // MARK: - ARSCNViewDelegate
-    
-/*
-    // Override to create and configure nodes for anchors added to the view's session.
-    func renderer(_ renderer: SCNSceneRenderer, nodeFor anchor: ARAnchor) -> SCNNode? {
-        let node = SCNNode()
-     
-        return node
+    @IBAction func tapGesturePressed(_ sender: UITapGestureRecognizer) {
+        print("screen is pressed")
+        takeScreenshot()
+//        performSegue(withIdentifier: "test", sender: self)
     }
-*/
+    
+    @IBAction func swipeGestureSwiped(_ sender: UISwipeGestureRecognizer) {
+        print("screen was swiped up")
+        performSegue(withIdentifier: "goToProfile", sender: self)
+    }
+    
+    func takeScreenshot() {
+        //var image = sceneView.snapshot()
+        image = sceneView.snapshot()
+    }
     
     func session(_ session: ARSession, didFailWithError error: Error) {
         // Present an error message to the user
