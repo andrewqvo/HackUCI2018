@@ -7,9 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		2A64EAF3202643AD00C4D50F /* VGG16.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = 2A64EAF2202643AD00C4D50F /* VGG16.mlmodel */; };
-		2A64EAFB20265FBB00C4D50F /* Inceptionv3.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = 2A64EAFA20265FBB00C4D50F /* Inceptionv3.mlmodel */; };
 		2A64EAFD2026604900C4D50F /* ImageProcessing.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A64EAFC2026604900C4D50F /* ImageProcessing.swift */; };
+		2A64EAFF2026650800C4D50F /* Inceptionv3.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = 2A64EAFE2026650800C4D50F /* Inceptionv3.mlmodel */; };
 		7C31DA9120257FC900B546C8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C31DA9020257FC900B546C8 /* AppDelegate.swift */; };
 		7C31DA9320257FC900B546C8 /* art.scnassets in Resources */ = {isa = PBXBuildFile; fileRef = 7C31DA9220257FC900B546C8 /* art.scnassets */; };
 		7C31DA9520257FC900B546C8 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C31DA9420257FC900B546C8 /* ViewController.swift */; };
@@ -28,9 +27,8 @@
 
 /* Begin PBXFileReference section */
 		2746A93AD2153E73CEEF2FBA /* Pods_HackUCI2018.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_HackUCI2018.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		2A64EAF2202643AD00C4D50F /* VGG16.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; name = VGG16.mlmodel; path = ../../../../../Desktop/HackUCI/Project/VGG16.mlmodel; sourceTree = "<group>"; };
-		2A64EAFA20265FBB00C4D50F /* Inceptionv3.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; name = Inceptionv3.mlmodel; path = ../../../../../Desktop/HackUCI/Project/Inceptionv3.mlmodel; sourceTree = "<group>"; };
 		2A64EAFC2026604900C4D50F /* ImageProcessing.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageProcessing.swift; sourceTree = "<group>"; };
+		2A64EAFE2026650800C4D50F /* Inceptionv3.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = Inceptionv3.mlmodel; sourceTree = "<group>"; };
 		6341FA68D3D22A9F393EB668 /* Pods-HackUCI2018.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HackUCI2018.release.xcconfig"; path = "Pods/Target Support Files/Pods-HackUCI2018/Pods-HackUCI2018.release.xcconfig"; sourceTree = "<group>"; };
 		7C31DA8D20257FC900B546C8 /* HackUCI2018.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HackUCI2018.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7C31DA9020257FC900B546C8 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -65,8 +63,7 @@
 		2A64EAF12026438800C4D50F /* ML-Models */ = {
 			isa = PBXGroup;
 			children = (
-				2A64EAF2202643AD00C4D50F /* VGG16.mlmodel */,
-				2A64EAFA20265FBB00C4D50F /* Inceptionv3.mlmodel */,
+				2A64EAFE2026650800C4D50F /* Inceptionv3.mlmodel */,
 			);
 			path = "ML-Models";
 			sourceTree = "<group>";
@@ -307,12 +304,11 @@
 				7C31DAA9202585C500B546C8 /* RegisterViewController.swift in Sources */,
 				7C31DA9520257FC900B546C8 /* ViewController.swift in Sources */,
 				7C31DA9120257FC900B546C8 /* AppDelegate.swift in Sources */,
-				2A64EAFB20265FBB00C4D50F /* Inceptionv3.mlmodel in Sources */,
+				2A64EAFF2026650800C4D50F /* Inceptionv3.mlmodel in Sources */,
 				7C31DAB72025A7AA00B546C8 /* foodDataModel.swift in Sources */,
 				2A64EAFD2026604900C4D50F /* ImageProcessing.swift in Sources */,
 				7C31DABD2025CCC500B546C8 /* ProfileViewController.swift in Sources */,
 				7C31DAB92025C6CF00B546C8 /* HomeViewController.swift in Sources */,
-				2A64EAF3202643AD00C4D50F /* VGG16.mlmodel in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
