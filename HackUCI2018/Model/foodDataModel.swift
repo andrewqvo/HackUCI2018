@@ -10,6 +10,7 @@ import Foundation
 
 class foodDataModel {
     
+    var name = ""
     var calories = 0
     var totalFat = 0
     var sodium = 0
