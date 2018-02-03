@@ -9,11 +9,17 @@
 import UIKit
 import SceneKit
 import ARKit
+import CoreML
 
 class ViewController: UIViewController, ARSCNViewDelegate {
 
     @IBOutlet var sceneView: ARSCNView!
     var image : UIImage = UIImage()
+    
+    let model = Inceptionv3()
+   
+
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -66,6 +72,23 @@ class ViewController: UIViewController, ARSCNViewDelegate {
     func takeScreenshot() {
         //var image = sceneView.snapshot()
         image = sceneView.snapshot()
+        classifyImage(image)
+    }
+    
+    func classifyImage(_ image: UIImage){
+        let size = CGSize(width: 299, height: 299)
+        
+        guard let pixelBufferImage = image.resize(to: size)?.pixelBuffer() else {
+            fatalError("ERROR: Converting to pixel buffer failed!")
+        }
+        
+        guard let inceptOutput = try? model.prediction(image: pixelBufferImage) else {
+            fatalError("ERROR: Prediction failed")
+        }
+        
+        let classOutput = inceptOutput.classLabel
+        print(classOutput)
+        
     }
     
     func session(_ session: ARSession, didFailWithError error: Error) {
