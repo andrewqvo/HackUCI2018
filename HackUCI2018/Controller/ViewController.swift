@@ -14,6 +14,10 @@ class ViewController: UIViewController, ARSCNViewDelegate {
 
     @IBOutlet var sceneView: ARSCNView!
     var image : UIImage = UIImage()
+    
+    //let coreMLModel = Resnet50()
+    let coreMlModel = Inceptionv3()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -66,7 +70,29 @@ class ViewController: UIViewController, ARSCNViewDelegate {
     func takeScreenshot() {
         //var image = sceneView.snapshot()
         image = sceneView.snapshot()
+        classifyImage(image: image)
     }
+    
+
+    
+    func classifyImage(image: UIImage ){
+// first attempt 
+        let screenScale = UIScreen.main.scale
+        //224 for VGG16, 299 for inception3
+        guard let img = resize(image: image, newSize: CGSize(width: 299/screenScale, height: 299/screenScale)) else { return }
+        let pixelBuffer = pixelBufferFromImage(image: img)
+
+        guard let VGGPrediction = try? coreMlModel.prediction(image: pixelBuffer) else {
+            print("ERROR: Failed to predict")
+            return
+        }
+
+        print(VGGPrediction.classLabel)
+        
+        
+    }
+    
+    
     
     func session(_ session: ARSession, didFailWithError error: Error) {
         // Present an error message to the user
