@@ -10,6 +10,7 @@ import UIKit
 
 class HomeViewController: UIViewController {
 
+    @IBOutlet weak var homeImageView: UIImageView!
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -21,7 +22,13 @@ class HomeViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
-
+    @IBAction func loginButtonPressed(_ sender: Any) {
+        performSegue(withIdentifier: "toLogin", sender: self)
+    }
+    
+    @IBAction func signupButtonPressed(_ sender: Any) {
+        performSegue(withIdentifier: "toRegister", sender: self)
+    }
     /*
     // MARK: - Navigation
 

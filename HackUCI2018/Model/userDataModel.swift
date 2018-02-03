@@ -16,5 +16,6 @@ class userDataModel {
     var userWeight = 0
     var totalCalories = 0
     var remainingCalories = 0
+    var consumedCalories = 0
     
 }
