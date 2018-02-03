@@ -2,7 +2,7 @@ import Foundation
 import Alamofire
 import SwiftyJSON
 
-class Nutrition
+class nutritionDataModel
 {
     var parameters: [String: String]
     var headers: [String: String]
@@ -39,7 +39,7 @@ class Nutrition
             if let value = response.result.value
             {
                 var json = JSON(value)
-                //                print(value)
+                //print(value)
                 let calories = (json["foods"][0]["nf_calories"]).doubleValue
                 let fat = (json["foods"][0]["nf_total_fat"]).doubleValue
                 let sodium = (json["foods"][0]["nf_sodium"]).doubleValue
@@ -50,10 +50,10 @@ class Nutrition
                 self.results["sodium"] = Double(String(format: "%.1f", sodium))
                 self.results["carbs"] = Double(String(format: "%.1f", carbs))
                 
-                self.percentages["calories"] = Int(round((calories / self.maxCalories) * 100))
-                self.percentages["fat"] = Int(round((fat / self.maxFat) * 100))
-                self.percentages["sodium"] = Int(round((sodium / self.maxSodium) * 100))
-                self.percentages["carbs"] = Int(round((carbs / self.maxCarbs) * 100))
+                self.percentages["caloriesPercent"] = Int(round((calories / self.maxCalories) * 100))
+                self.percentages["fatPercent"] = Int(round((fat / self.maxFat) * 100))
+                self.percentages["sodiumPercent"] = Int(round((sodium / self.maxSodium) * 100))
+                self.percentages["carbsPercent"] = Int(round((carbs / self.maxCarbs) * 100))
             }
         }
     }

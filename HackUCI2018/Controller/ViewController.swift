@@ -17,6 +17,10 @@ class ViewController: UIViewController, ARSCNViewDelegate {
     var image : UIImage = UIImage()
     
     let model = Inceptionv3()
+    var foodItem = ""
+    var currentFoodNutrition = nutritionDataModel()
+    var dailyValues = [String: Double]()
+    var dailyPercentages = [String: Int]()
    
 
     
@@ -72,10 +76,22 @@ class ViewController: UIViewController, ARSCNViewDelegate {
     func takeScreenshot() {
         //var image = sceneView.snapshot()
         image = sceneView.snapshot()
-        classifyImage(image)
+        foodItem = classifyImage(image)
+        currentFoodNutrition.processNutrition(food: foodItem)
+        setNutritionVariables(nutrition: currentFoodNutrition)
     }
     
-    func classifyImage(_ image: UIImage){
+    func setNutritionVariables(nutrition: nutritionDataModel) {
+        //DO ALL OPERATIONS IN THIS CLOSURE
+        DispatchQueue.main.asyncAfter(deadline: .now() + 1.5, execute: {
+            self.dailyValues = self.currentFoodNutrition.getResults()
+            self.dailyPercentages = self.currentFoodNutrition.getResultsPercentages()
+            print(self.dailyValues)
+            print(self.dailyPercentages)
+        })
+    }
+    
+    func classifyImage(_ image: UIImage) -> String{
         let size = CGSize(width: 299, height: 299)
         
         guard let pixelBufferImage = image.resize(to: size)?.pixelBuffer() else {
@@ -88,6 +104,7 @@ class ViewController: UIViewController, ARSCNViewDelegate {
         
         let classOutput = inceptOutput.classLabel
         print(classOutput)
+        return classOutput
         
     }
     
