@@ -14,6 +14,9 @@
 		7C31DA9A20257FC900B546C8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7C31DA9920257FC900B546C8 /* Assets.xcassets */; };
 		7C31DA9D20257FC900B546C8 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7C31DA9B20257FC900B546C8 /* LaunchScreen.storyboard */; };
 		7C31DAA9202585C500B546C8 /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C31DAA8202585C500B546C8 /* RegisterViewController.swift */; };
+		7C31DAB120258A4200B546C8 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 7C31DAB020258A4200B546C8 /* GoogleService-Info.plist */; };
+		7C31DAB520258EC500B546C8 /* userDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C31DAB420258EC500B546C8 /* userDataModel.swift */; };
+		7C31DAB72025A7AA00B546C8 /* foodDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C31DAB62025A7AA00B546C8 /* foodDataModel.swift */; };
 		86AC6DDC173869261FDB3DB6 /* Pods_HackUCI2018.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2746A93AD2153E73CEEF2FBA /* Pods_HackUCI2018.framework */; };
 /* End PBXBuildFile section */
 
@@ -29,6 +32,9 @@
 		7C31DA9C20257FC900B546C8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		7C31DA9E20257FC900B546C8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		7C31DAA8202585C500B546C8 /* RegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
+		7C31DAB020258A4200B546C8 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		7C31DAB420258EC500B546C8 /* userDataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = userDataModel.swift; sourceTree = "<group>"; };
+		7C31DAB62025A7AA00B546C8 /* foodDataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = foodDataModel.swift; sourceTree = "<group>"; };
 		F40D82D9D8FE27B08E64ECCD /* Pods-HackUCI2018.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HackUCI2018.debug.xcconfig"; path = "Pods/Target Support Files/Pods-HackUCI2018/Pods-HackUCI2018.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -71,6 +77,7 @@
 				7C31DAAD202585F800B546C8 /* Supporting Files */,
 				7C31DA9020257FC900B546C8 /* AppDelegate.swift */,
 				7C31DA9E20257FC900B546C8 /* Info.plist */,
+				7C31DAB020258A4200B546C8 /* GoogleService-Info.plist */,
 			);
 			path = HackUCI2018;
 			sourceTree = "<group>";
@@ -78,6 +85,8 @@
 		7C31DAAA202585CC00B546C8 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				7C31DAB420258EC500B546C8 /* userDataModel.swift */,
+				7C31DAB62025A7AA00B546C8 /* foodDataModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -190,6 +199,7 @@
 			files = (
 				7C31DA9320257FC900B546C8 /* art.scnassets in Resources */,
 				7C31DA9D20257FC900B546C8 /* LaunchScreen.storyboard in Resources */,
+				7C31DAB120258A4200B546C8 /* GoogleService-Info.plist in Resources */,
 				7C31DA9A20257FC900B546C8 /* Assets.xcassets in Resources */,
 				7C31DA9820257FC900B546C8 /* Main.storyboard in Resources */,
 			);
@@ -266,9 +276,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7C31DAB520258EC500B546C8 /* userDataModel.swift in Sources */,
 				7C31DAA9202585C500B546C8 /* RegisterViewController.swift in Sources */,
 				7C31DA9520257FC900B546C8 /* ViewController.swift in Sources */,
 				7C31DA9120257FC900B546C8 /* AppDelegate.swift in Sources */,
+				7C31DAB72025A7AA00B546C8 /* foodDataModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
