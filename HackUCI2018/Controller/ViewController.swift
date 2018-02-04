@@ -18,6 +18,7 @@ class ViewController: UIViewController, ARSCNViewDelegate {
     var image : UIImage = UIImage()
     
     let model = Inceptionv3()
+    
     var foodItem = ""
     var currentFoodNutrition = nutritionDataModel()
     var dailyValues = [String: Double]()
