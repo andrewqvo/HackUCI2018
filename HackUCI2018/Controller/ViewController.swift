@@ -260,7 +260,6 @@ class ViewController: UIViewController, ARSCNViewDelegate {
             self.sceneView.scene.rootNode.addChildNode(sodiumpNode)
             self.sceneView.scene.rootNode.addChildNode(carbspNode)
             self.sceneView.autoenablesDefaultLighting = true
-            
         })
     }
     
