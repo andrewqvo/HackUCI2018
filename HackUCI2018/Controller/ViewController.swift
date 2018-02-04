@@ -33,7 +33,7 @@ class ViewController: UIViewController, ARSCNViewDelegate {
         sceneView.delegate = self
         
         // Show statistics such as fps and timing information
-        sceneView.showsStatistics = true
+        sceneView.showsStatistics = false
         
         // Create a new scene
         let scene = SCNScene()
@@ -195,7 +195,7 @@ class ViewController: UIViewController, ARSCNViewDelegate {
             //Measures
             let textscale = SCNVector3(x: 0.001, y: 0.001, z: 0.001)
             //Percentages
-            let textscale2 = SCNVector3(x: 0.0005, y: 0.0005, z: 0.0005)
+            let textscale2 = SCNVector3(x: 0.0007, y: 0.0007, z: 0.0007)
             
             //Position
             let foodpos = SCNVector3Make(position.x - 0.015, position.y + 0.06, position.z)

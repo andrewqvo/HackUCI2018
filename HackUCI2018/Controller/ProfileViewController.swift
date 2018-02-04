@@ -38,8 +38,13 @@ class ProfileViewController: UIViewController {
             self.stringOfEatenFoods = snapshotValue
             print(self.stringOfEatenFoods) //ACESS THE STRING WITH THIS
             //WRITE CODE IN HERE
+            var myFoodArr = self.stringOfEatenFoods.split(separator: " ")
+            var myFoodList = ""
+            for foods in myFoodArr{
+                myFoodList += "- " + foods.capitalized + "\n"
+            }
             //WRITE IN HERE THIS IS IMPORTANT!!
-            self.eatenFoodLabel.text = self.stringOfEatenFoods
+            self.eatenFoodLabel.text = myFoodList
         }
     }
     
