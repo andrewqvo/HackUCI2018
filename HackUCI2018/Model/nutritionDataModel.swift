@@ -22,8 +22,8 @@ class nutritionDataModel
         self.headers = [
             // Change these values when API key expires.
 
-            "x-app-id": "bac85026",
-            "x-app-key": "786e27300acb030a2d64fc5744066123"
+            "x-app-id": "81bbc455",
+            "x-app-key": "be7a06f608964ae838310d72ea7f923e"
         ]
         self.results = [String: Double]()
         self.percentages = [String: Int]()
