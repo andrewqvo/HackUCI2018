@@ -91,12 +91,10 @@ class ViewController: UIViewController, ARSCNViewDelegate {
         image = sceneView.snapshot()
         foodItem = classifyImage(image)
         currentFoodNutrition.processNutrition(food: foodItem)
-<<<<<<< HEAD
-        setNutritionVariables(nutrition: currentFoodNutrition)
+
         //self.updateConsumedUserCalories(calories: currentFoodNutrition.ca)
-=======
+
         setNutritionVariables(nutrition: currentFoodNutrition, position: position)
->>>>>>> 1bdbaabf43de9e69e563001aa53cd621440060bf
     }
     
     func setNutritionVariables(nutrition: nutritionDataModel, position: SCNVector3) {
@@ -106,9 +104,7 @@ class ViewController: UIViewController, ARSCNViewDelegate {
             self.dailyPercentages = self.currentFoodNutrition.getResultsPercentages()
             print(self.dailyValues)
             print(self.dailyPercentages)
-<<<<<<< HEAD
             self.updateConsumedUserCalories(calories: Int(self.dailyValues["calories"]!))
-=======
             
             let foodtype = nutrition.name
             
@@ -269,8 +265,6 @@ class ViewController: UIViewController, ARSCNViewDelegate {
             self.sceneView.scene.rootNode.addChildNode(sodiumpNode)
             self.sceneView.scene.rootNode.addChildNode(carbspNode)
             self.sceneView.autoenablesDefaultLighting = true
-            
->>>>>>> 1bdbaabf43de9e69e563001aa53cd621440060bf
         })
     }
     
