@@ -24,6 +24,9 @@ class ProfileViewController: UIViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+    @IBAction func swipeUp(_ sender: Any) {
+        performSegue(withIdentifier: "toCamera", sender: self)
+    }
     
     @IBAction func logoutButtonPressed(_ sender: Any) {
         self.view.window?.rootViewController?.dismiss(animated: true, completion: nil)
