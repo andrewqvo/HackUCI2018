@@ -17,5 +17,6 @@ class userDataModel {
     var totalCalories = 0
     var remainingCalories = 0
     var consumedCalories = 0
+    var stringOfEatenFood = " "
     
 }

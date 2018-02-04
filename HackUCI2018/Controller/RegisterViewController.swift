@@ -85,7 +85,7 @@ class RegisterViewController: UIViewController {
         guard let myUserID = Auth.auth().currentUser?.uid else {return}
         let usersInfo = usersDB.child(myUserID)
         
-        let usersInfoDict = ["UserEmail" : user.userEmail, "UserGender" : user.userGender, "UserWeight" : user.userWeight, "TotalCalories" : user.totalCalories, "RemainingCalories" : user.remainingCalories, "ConsumedCalories" : user.consumedCalories] as [String : Any]
+        let usersInfoDict = ["UserEmail" : user.userEmail, "UserGender" : user.userGender, "UserWeight" : user.userWeight, "TotalCalories" : user.totalCalories, "RemainingCalories" : user.remainingCalories, "ConsumedCalories" : user.consumedCalories, "EatenFood" : user.stringOfEatenFood] as [String : Any]
         
         usersInfo.setValue(usersInfoDict)
     }

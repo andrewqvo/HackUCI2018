@@ -92,10 +92,21 @@ class ViewController: UIViewController, ARSCNViewDelegate {
         image = sceneView.snapshot()
         foodItem = classifyImage(image)
         currentFoodNutrition.processNutrition(food: foodItem)
-
+        addFoodEaten(food: foodItem.replacingOccurrences(of: " ", with: ""))
         //self.updateConsumedUserCalories(calories: currentFoodNutrition.ca)
 
         setNutritionVariables(nutrition: currentFoodNutrition, position: position)
+    }
+    
+    func addFoodEaten(food: String) {
+        let usersDB = Database.database().reference().child("Users")
+        guard let myUserID = Auth.auth().currentUser?.uid else {return}
+        let userNEW = usersDB.child(myUserID).child("EatenFood")
+        userNEW.observeSingleEvent(of: .value) { (snapshot) in
+            let snapshotValue = snapshot.value as! String
+            let value = snapshotValue + "\(food) "
+            userNEW.setValue(value)
+        }
     }
     
     func setNutritionVariables(nutrition: nutritionDataModel, position: SCNVector3) {
