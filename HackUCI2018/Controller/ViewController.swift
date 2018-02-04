@@ -162,16 +162,16 @@ class ViewController: UIViewController, ARSCNViewDelegate {
             
             //assign color
             let material = SCNMaterial()
-            material.diffuse.contents = UIColor.red
+            material.diffuse.contents = UIColor(red: CGFloat(121.0/255.0), green: CGFloat(207.0/255.0), blue: CGFloat(198.0/255.0), alpha: CGFloat(1.0))
             calorieBar.materials = [material]
             let material2 = SCNMaterial()
-            material2.diffuse.contents = UIColor(red: CGFloat(80.0/255.0), green: CGFloat(156.0/255.0), blue: CGFloat(215.0/255.0), alpha: CGFloat(1.0))
+            material2.diffuse.contents = UIColor(red: CGFloat(122.0/255.0), green: CGFloat(162.0/255.0), blue: CGFloat(200.0/255.0), alpha: CGFloat(1.0))
             fatBar.materials = [material2]
             let material3 = SCNMaterial()
-            material3.diffuse.contents = UIColor(red: CGFloat(250.0/255.0), green: CGFloat(245.0/255.0), blue: CGFloat(185.0/255.0), alpha: CGFloat(1.0))
+            material3.diffuse.contents = UIColor(red: CGFloat(144.0/255.0), green: CGFloat(133.0/255.0), blue: CGFloat(207.0/255.0), alpha: CGFloat(1.0))
             sodiumBar.materials = [material3]
             let material4 = SCNMaterial()
-            material4.diffuse.contents = UIColor.magenta
+            material4.diffuse.contents = UIColor(red: CGFloat(151.0/255.0), green: CGFloat(107.0/255.0), blue: CGFloat(202.0/255.0), alpha: CGFloat(1.0))
             carbsBar.materials = [material4]
             
             let material5 = SCNMaterial()

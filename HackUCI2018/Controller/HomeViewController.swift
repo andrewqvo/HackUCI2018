@@ -11,10 +11,14 @@ import UIKit
 class HomeViewController: UIViewController {
 
     @IBOutlet weak var homeImageView: UIImageView!
+    @IBOutlet weak var SignUpButton: UIButton!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        SignUpButton.layer.masksToBounds = true
+        SignUpButton.layer.cornerRadius = 8
     }
 
     override func didReceiveMemoryWarning() {

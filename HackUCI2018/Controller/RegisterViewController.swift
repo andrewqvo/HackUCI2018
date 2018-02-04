@@ -17,6 +17,7 @@ class RegisterViewController: UIViewController {
     @IBOutlet weak var totalCaloriesTextField: UITextField!
     @IBOutlet weak var maleButton: UIButton!
     @IBOutlet weak var femaleButton: UIButton!
+    @IBOutlet weak var SignUpButton: UIButton!
     var user = userDataModel()
     var gender = ""
     
@@ -24,6 +25,8 @@ class RegisterViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
+        SignUpButton.layer.masksToBounds = true
+        SignUpButton.layer.cornerRadius = 8
     }
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {

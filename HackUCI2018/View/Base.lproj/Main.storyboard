@@ -119,7 +119,7 @@
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Recent Foods:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fer-wo-0gF">
                                 <rect key="frame" x="18" y="233" width="357" height="33"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="21"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="21"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
@@ -204,6 +204,7 @@
                         <viewLayoutGuide key="safeArea" id="E7T-Ao-MZf"/>
                     </view>
                     <connections>
+                        <outlet property="SignUpButton" destination="W9g-nQ-KiV" id="Sh4-BZ-Vdw"/>
                         <outlet property="homeImageView" destination="aIv-sM-COj" id="uX4-0M-j7B"/>
                         <segue destination="5f6-M8-PBe" kind="show" identifier="toLogin" id="pOo-Hx-1KY"/>
                         <segue destination="Rmq-RG-XKg" kind="show" identifier="toRegister" id="IX8-bd-JCV"/>
@@ -235,8 +236,30 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" secureTextEntry="YES" smartDashesType="no" smartInsertDeleteType="no" smartQuotesType="no"/>
                             </textField>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="appicon" translatesAutoresizingMaskIntoConstraints="NO" id="Xtv-Bi-rXE">
+                                <rect key="frame" x="67" y="89" width="240" height="199"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CP9-cM-djZ">
+                                <rect key="frame" x="225" y="617" width="96" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
+                                <state key="normal" title="Sign Up!">
+                                    <color key="titleColor" red="0.41176470590000003" green="0.96078431369999995" blue="0.61960784310000006" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <connections>
+                                    <segue destination="Rmq-RG-XKg" kind="show" id="IPc-xF-53K"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Don't have an account?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fv2-0Q-N61">
+                                <rect key="frame" x="38" y="622" width="201" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UZV-cK-or5">
-                                <rect key="frame" x="76" y="475" width="223" height="64"/>
+                                <rect key="frame" x="89" y="475" width="197" height="48"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="17"/>
@@ -247,15 +270,12 @@
                                     <action selector="loginButtonPressed:" destination="5f6-M8-PBe" eventType="touchUpInside" id="iM4-B2-Qgp"/>
                                 </connections>
                             </button>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="appicon" translatesAutoresizingMaskIntoConstraints="NO" id="Xtv-Bi-rXE">
-                                <rect key="frame" x="67" y="89" width="240" height="199"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            </imageView>
                         </subviews>
                         <color key="backgroundColor" red="0.42919862269999998" green="0.7412588" blue="0.89022034409999995" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <viewLayoutGuide key="safeArea" id="DP8-0h-LOA"/>
                     </view>
                     <connections>
+                        <outlet property="LoginButton" destination="UZV-cK-or5" id="GR5-GD-oJf"/>
                         <outlet property="emailTextField" destination="50N-ah-H16" id="CDI-pB-LbQ"/>
                         <outlet property="loginImageView" destination="Xtv-Bi-rXE" id="AjZ-Rh-tx3"/>
                         <outlet property="passwordTextField" destination="x8z-bV-kMJ" id="pDy-sr-AYJ"/>
@@ -372,6 +392,7 @@
                         <viewLayoutGuide key="safeArea" id="jE4-Z1-f4z"/>
                     </view>
                     <connections>
+                        <outlet property="SignUpButton" destination="baC-BP-RNb" id="Cue-9T-Kf3"/>
                         <outlet property="emailTextField" destination="dST-gZ-INb" id="6YZ-oJ-vya"/>
                         <outlet property="femaleButton" destination="9y9-Mb-CNH" id="LFF-uS-qAg"/>
                         <outlet property="maleButton" destination="4Tb-rS-5zh" id="FMK-9f-2Na"/>
@@ -390,6 +411,7 @@
         <image name="appicon" width="406" height="398"/>
     </resources>
     <inferredMetricsTieBreakers>
+        <segue reference="IX8-bd-JCV"/>
         <segue reference="BKV-GP-IBf"/>
     </inferredMetricsTieBreakers>
 </document>

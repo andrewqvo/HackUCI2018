@@ -8,6 +8,7 @@
 
 import UIKit
 import Firebase
+import QuartzCore
 
 class ProfileViewController: UIViewController {
 
@@ -27,6 +28,9 @@ class ProfileViewController: UIViewController {
         setConsumedCalories()
         setRemainingCalories()
         // Do any additional setup after loading the view.
+        
+        eatenFoodLabel.layer.masksToBounds = true
+        eatenFoodLabel.layer.cornerRadius = 10
     }
     
     func setStringOfEatenFoods() {
@@ -41,7 +45,7 @@ class ProfileViewController: UIViewController {
             var myFoodArr = self.stringOfEatenFoods.split(separator: " ")
             var myFoodList = ""
             for foods in myFoodArr{
-                myFoodList += "- " + foods.capitalized + "\n"
+                myFoodList += " - " + foods.capitalized + "\n"
             }
             //WRITE IN HERE THIS IS IMPORTANT!!
             self.eatenFoodLabel.text = myFoodList

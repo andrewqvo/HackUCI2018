@@ -14,11 +14,14 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var emailTextField: UITextField!
     @IBOutlet weak var passwordTextField: UITextField!
     @IBOutlet weak var loginImageView: UIImageView!
+    @IBOutlet weak var LoginButton: UIButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         // Do any additional setup after loading the view.
+        LoginButton.layer.masksToBounds = true
+        LoginButton.layer.cornerRadius = 8
     }
 
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
