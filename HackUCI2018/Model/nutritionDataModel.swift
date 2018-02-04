@@ -12,14 +12,15 @@ class nutritionDataModel
     var maxFat: Double
     var maxSodium: Double
     var maxCarbs: Double
+    var name: String
     
     init()
     {
         self.parameters = [String: String]()
         self.headers = [
             // Change these values when API key expires.
-            "x-app-id": "81bbc455",
-            "x-app-key": "3b48ed3f395d5a25d351ed151b3e93c0"
+            "x-app-id": "bac85026",
+            "x-app-key": "786e27300acb030a2d64fc5744066123"
         ]
         self.results = [String: Double]()
         self.percentages = [String: Int]()
@@ -27,12 +28,15 @@ class nutritionDataModel
         self.maxFat = 65.0
         self.maxSodium = 2400.0
         self.maxCarbs = 300.0
+        self.name = ""
     }
     
     func processNutrition(food: String)
     {
         self.parameters["query"] = food
         let baseURL = "https://trackapi.nutritionix.com/v2/natural/nutrients"
+        
+        self.name = food
         
         Alamofire.request(baseURL, method: .post, parameters: self.parameters, encoding: URLEncoding.default, headers: self.headers).responseJSON { (response) in
             
