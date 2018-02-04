@@ -35,7 +35,6 @@ class ViewController: UIViewController, ARSCNViewDelegate {
         sceneView.showsStatistics = true
         
         // Create a new scene
-        let scene = SCNScene(named: "art.scnassets/ship.scn")!
         
         // Set the scene to the view
         sceneView.scene = scene
@@ -74,7 +73,6 @@ class ViewController: UIViewController, ARSCNViewDelegate {
         performSegue(withIdentifier: "goToProfile", sender: self)
     }
     
-    func takeScreenshot() {
         //var image = sceneView.snapshot()
         image = sceneView.snapshot()
         foodItem = classifyImage(image)
@@ -83,7 +81,6 @@ class ViewController: UIViewController, ARSCNViewDelegate {
         //self.updateConsumedUserCalories(calories: currentFoodNutrition.ca)
     }
     
-    func setNutritionVariables(nutrition: nutritionDataModel) {
         //DO ALL OPERATIONS IN THIS CLOSURE
         DispatchQueue.main.asyncAfter(deadline: .now() + 1.5, execute: {
             self.dailyValues = self.currentFoodNutrition.getResults()
