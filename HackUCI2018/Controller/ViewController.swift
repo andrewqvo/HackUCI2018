@@ -10,6 +10,7 @@ import UIKit
 import SceneKit
 import ARKit
 import CoreML
+import Firebase
 
 class ViewController: UIViewController, ARSCNViewDelegate {
 
@@ -79,6 +80,7 @@ class ViewController: UIViewController, ARSCNViewDelegate {
         foodItem = classifyImage(image)
         currentFoodNutrition.processNutrition(food: foodItem)
         setNutritionVariables(nutrition: currentFoodNutrition)
+        //self.updateConsumedUserCalories(calories: currentFoodNutrition.ca)
     }
     
     func setNutritionVariables(nutrition: nutritionDataModel) {
@@ -88,8 +90,34 @@ class ViewController: UIViewController, ARSCNViewDelegate {
             self.dailyPercentages = self.currentFoodNutrition.getResultsPercentages()
             print(self.dailyValues)
             print(self.dailyPercentages)
+            self.updateConsumedUserCalories(calories: Int(self.dailyValues["calories"]!))
         })
     }
+    
+    //work on firebase
+    func updateConsumedUserCalories(calories: Int) {
+        let usersDB = Database.database().reference().child("Users")
+        guard let myUserID = Auth.auth().currentUser?.uid else {return}
+        let userNEW = usersDB.child(myUserID).child("ConsumedCalories")
+        userNEW.observeSingleEvent(of: .value) { (snapshot) in
+            let snapshotValue = snapshot.value as! Int
+            let value = snapshotValue + calories
+            userNEW.setValue(value)
+            self.updateRemainingUserCalories(calories: calories)
+        }
+    }
+    
+    func updateRemainingUserCalories(calories: Int) {
+        let usersDB = Database.database().reference().child("Users")
+        guard let myUserID = Auth.auth().currentUser?.uid else {return}
+        let userNEW = usersDB.child(myUserID).child("RemainingCalories")
+        userNEW.observeSingleEvent(of: .value) { (snapshot) in
+            let snapshotValue = snapshot.value as! Int
+            let value = snapshotValue - calories
+            userNEW.setValue(value)
+        }
+    }
+
     
     func classifyImage(_ image: UIImage) -> String{
         let size = CGSize(width: 299, height: 299)

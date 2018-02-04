@@ -12,14 +12,15 @@ class nutritionDataModel
     var maxFat: Double
     var maxSodium: Double
     var maxCarbs: Double
+
     
     init()
     {
         self.parameters = [String: String]()
         self.headers = [
             // Change these values when API key expires.
-            "x-app-id": "81bbc455",
-            "x-app-key": "3b48ed3f395d5a25d351ed151b3e93c0"
+            "x-app-id": "43b722f2",
+            "x-app-key": "15c9c4df375bdd97d92f689361db5d74"
         ]
         self.results = [String: Double]()
         self.percentages = [String: Int]()
