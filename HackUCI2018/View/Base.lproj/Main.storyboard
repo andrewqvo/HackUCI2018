@@ -108,6 +108,13 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Smv-0h-pGX">
+                                <rect key="frame" x="0.0" y="222" width="375" height="161"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <gestureRecognizers/>
@@ -118,6 +125,7 @@
                     </view>
                     <connections>
                         <outlet property="caloriesConsumedLabel" destination="t9a-1Q-jAJ" id="G3r-cB-jIq"/>
+                        <outlet property="eatenFoodLabel" destination="Smv-0h-pGX" id="S3R-9V-jXs"/>
                         <outlet property="remainingCaloriesLabel" destination="wG4-do-e7O" id="Gi8-sk-Pom"/>
                         <outlet property="totalCaloriesLabel" destination="vT7-yW-bH4" id="yz7-GP-iBg"/>
                         <segue destination="BV1-FR-VrT" kind="show" identifier="toCamera" id="BKV-GP-IBf"/>
@@ -130,7 +138,7 @@
                     </connections>
                 </swipeGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="-967" y="977"/>
+            <point key="canvasLocation" x="-967.20000000000005" y="976.46176911544239"/>
         </scene>
         <!--Home View Controller-->
         <scene sceneID="JDO-kH-M5f">

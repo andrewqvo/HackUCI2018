@@ -14,6 +14,7 @@ class ProfileViewController: UIViewController {
     @IBOutlet weak var totalCaloriesLabel: UILabel!
     @IBOutlet weak var caloriesConsumedLabel: UILabel!
     @IBOutlet weak var remainingCaloriesLabel: UILabel!
+    @IBOutlet weak var eatenFoodLabel: UILabel!
     var stringOfEatenFoods = ""
     var dailyCalorieGoal = 0
     var consumedCalories = 0
@@ -38,6 +39,7 @@ class ProfileViewController: UIViewController {
             print(self.stringOfEatenFoods) //ACESS THE STRING WITH THIS
             //WRITE CODE IN HERE
             //WRITE IN HERE THIS IS IMPORTANT!!
+            self.eatenFoodLabel.text = self.stringOfEatenFoods
         }
     }
     
