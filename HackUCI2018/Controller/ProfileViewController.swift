@@ -31,6 +31,7 @@ class ProfileViewController: UIViewController {
         
         eatenFoodLabel.layer.masksToBounds = true
         eatenFoodLabel.layer.cornerRadius = 10
+
     }
     
     func setStringOfEatenFoods() {
